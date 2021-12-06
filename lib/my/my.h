@@ -46,4 +46,5 @@ int is_num(char c);
 int is_alpha(char c);
 int is_upper(char c);
 int is_lower(char c);
+int my_printf(char *str, ...);
 #endif

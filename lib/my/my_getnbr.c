@@ -5,14 +5,7 @@
 ** Function that returns an int based on a string
 */
 
-static int my_strlen_get(char const *str)
-{
-    int i = 0;
-
-    while (str[i] != '\0')
-        i++;
-    return i;
-}
+int my_strlen(char const *str);
 
 static int my_true_len(char const *str)
 {
@@ -60,7 +53,7 @@ static int my_decimal_pow(int p)
 int my_getnbr(char const *str)
 {
     int true_len = my_true_len(str);
-    int len = my_strlen_get(str);
+    int len = my_strlen(str);
     long long int number = 0;
 
     for (int i = 0; i < len; i++) {

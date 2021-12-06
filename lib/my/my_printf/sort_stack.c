@@ -38,7 +38,7 @@ void my_sort_list(stack_t **st)
 
     if (my_list_size(*st) <= 1)
         return;
-    
+
     while (!sorted) {
         sorted = 1;
         if ((*st)->flag.prio_print < (*st)->next->flag.prio_print)

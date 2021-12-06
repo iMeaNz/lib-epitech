@@ -94,7 +94,7 @@ int compute_strings(stack_t **ptr, va_list ap, int *is_special, char id)
         (*is_special) = 1;
         (*ptr)->flag.id = my_put_printable_str(va_arg(ap, char *));
     }
-    if (id == 'p')  
+    if (id == 'p')
         (*ptr)->flag.id = my_print_pointer(va_arg(ap, unsigned long long));
     return my_strlen((*ptr)->flag.id);
 }

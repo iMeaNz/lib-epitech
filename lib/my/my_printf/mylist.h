@@ -10,8 +10,7 @@
 #ifndef MYLIST_H
     #define MYLIST_H
 
-typedef struct stack
-{
+typedef struct stack {
     format_t flag;
     struct stack *next;
 } stack_t;

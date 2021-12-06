@@ -26,7 +26,6 @@ void my_put_zeros(char c, char *to_add)
     if (c < 10) {
         to_add[1] = '0';
         to_add[2] = '0';
-    }
-    else if (c < 100)
+    } else if (c < 100)
         to_add[1] = '0';
 }

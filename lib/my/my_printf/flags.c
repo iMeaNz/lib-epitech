@@ -12,7 +12,7 @@
 format_t *create_array_struct(void)
 {
     static format_t output[17] = {
-        {"d", 1, -1, -1}, 
+        {"d", 1, -1, -1},
         {"i", 1, -1, -1},
         {"o", 1, -1, -1},
         {"x", 1, -1, -1},

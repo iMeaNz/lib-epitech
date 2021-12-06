@@ -53,7 +53,7 @@ void remove_duplicates(stack_t **list)
 {
     int (*ptr_cmp)(char const *, char const *) = &my_strcmp;
     stack_t *ptr = *list;
-    
+
     while (ptr != NULL) {
         char *ref = ptr->flag.id;
         my_delete_nodes(&ptr->next, ref, ptr_cmp);

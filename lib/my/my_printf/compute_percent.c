@@ -90,7 +90,7 @@ void modify_stack(stack_t *st, va_list ap)
     print_stack(st, is_number, begin_array, is_special);
 }
 
-int compute_percent(char *str, va_list ap) 
+int compute_percent(char *str, va_list ap)
 {
     int i = 0;
     int is_special = 0;
@@ -107,7 +107,7 @@ int compute_percent(char *str, va_list ap)
         my_putchar('%');
         return 0;
     } else
-        return i; 
+        return i;
     modify_stack(st, ap);
     return i + 1;
 }

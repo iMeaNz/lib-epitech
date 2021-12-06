@@ -5,30 +5,14 @@
 ** Function that reverses a string
 */
 
-static void my_swap_rev(char *a, char *b)
-{
-    char temp = *a;
-    *a = *b;
-    *b = temp;
-}
-
-static int my_strlen_rev(char *src)
-{
-    int i = 0;
-
-    while (src[i] != '\0') {
-        i++;
-    }
-
-    return i;
-}
+#include "my.h"
 
 char *my_revstr(char *str)
 {
-    int length = my_strlen_rev(str);
+    int length = my_strlen(str);
 
     for (int i = 0; i < length / 2; i++) {
-        my_swap_rev(&str[i], &str[length - i - 1]);
+        my_swap_char(&str[i], &str[length - i - 1]);
     }
 
     return str;

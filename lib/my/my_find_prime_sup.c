@@ -5,8 +5,7 @@
 ** Find the first prime number superior
 */
 
-int my_compute_power_it(int nb, int p);
-int my_is_prime(int nb);
+#include "my.h"
 
 int my_find_prime_sup(int nb)
 {

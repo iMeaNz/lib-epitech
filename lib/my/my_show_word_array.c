@@ -4,6 +4,7 @@
 ** File description:
 ** Display the content of an array of words
 */
+
 #include "my.h"
 
 int my_show_word_array(char * const *tab)

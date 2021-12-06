@@ -7,9 +7,6 @@
 
 #include "my.h"
 
-int my_compute_power_it(int nb, int p);
-int my_strlen(char const *str);
-
 static int search_in_base(char const *base, char to_find)
 {
     int i = 0;

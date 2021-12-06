@@ -18,8 +18,6 @@ SRC	=	my_compute_power_it.c		\
 		my_putstr.c					\
 		my_revstr.c					\
 		my_show_word_array.c		\
-		my_showmem.c				\
-		my_showstr.c				\
 		my_sort_int_array.c			\
 		my_str_isalpha.c			\
 		my_str_islower.c			\
@@ -39,7 +37,11 @@ SRC	=	my_compute_power_it.c		\
 		my_strstr.c					\
 		my_strupcase.c				\
 		my_swap_char.c				\
-		my_swap.c
+		my_swap.c					\
+		is_alpha.c					\
+		is_lower.c					\
+		is_num.c					\
+		is_upper.c	
 
 OBJ	=	$(SRC:.c=.o)
 

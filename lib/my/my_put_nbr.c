@@ -21,8 +21,7 @@ int my_put_nbr(int nb)
     }
     modulo = nb % 10 + '0';
     nb /= 10;
-    if (nb > 0) {
+    if (nb > 0)
         my_put_nbr(nb);
-    }
     my_putchar(modulo);
 }

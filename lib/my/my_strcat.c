@@ -5,20 +5,11 @@
 ** Function that concatenates two strings
 */
 
-static int my_strlen_cat(char *dest)
-{
-    int i = 0;
-
-    while (dest[i] != '\0') {
-        i++;
-    }
-
-    return i;
-}
+#include "my.h"
 
 char *my_strcat(char *dest, char const *src)
 {
-    int dest_len = my_strlen_cat(dest);
+    int dest_len = my_strlen(dest);
     int i = 0;
 
     while (src[i] != '\0') {

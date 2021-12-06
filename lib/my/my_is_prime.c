@@ -5,17 +5,7 @@
 ** Finds if a number is prime
 */
 
-int my_compute_power_it(int nb, int p);
-
-static int my_compute_power_it_prime(int nb, int p)
-{
-    int result = 1;
-    for (int i = 0; i < p; i++) {
-        result *= nb;
-    }
-
-    return result;
-}
+#include "my.h"
 
 int my_is_prime(int nb)
 {

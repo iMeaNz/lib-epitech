@@ -5,7 +5,7 @@
 ** Function that returns an int based on a string
 */
 
-int my_strlen(char const *str);
+#include "my.h"
 
 static int my_true_len(char const *str)
 {

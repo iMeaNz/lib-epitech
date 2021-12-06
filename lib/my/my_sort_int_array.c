@@ -5,18 +5,13 @@
 ** Function that sorts an array of int
 */
 
-static void my_swap_sort(int *a, int *b)
-{
-    int tmp = *a;
-    *a = *b;
-    *b = tmp;
-}
+#include "my.h"
 
 static void compare_number(int *array, int *is_sorted, int size)
 {
     for (int i = 0; i < size - 1; i++) {
         if (array[i + 1] < array[i]) {
-            my_swap_sort(&array[i], &array[i + 1]);
+            my_swap(&array[i], &array[i + 1]);
             *is_sorted = 0;
         }
     }

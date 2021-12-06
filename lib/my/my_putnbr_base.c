@@ -4,21 +4,12 @@
 ** File description:
 ** Convert a decimal into a given base
 */
+
 #include "my.h"
-
-static int my_strlen_put(char const *str)
-{
-    int i = 0;
-
-    while (str[i] != '\0') {
-        i++;
-    }
-    return i;
-}
 
 int my_putnbr_base(int nbr, char const *base)
 {
-    int base_len = my_strlen_put(base);
+    int base_len = my_strlen(base);
     int modulo = 0;
     long int bigger_nbr = nbr;
 

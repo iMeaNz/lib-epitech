@@ -15,7 +15,7 @@ int my_putstr(char const *str);
 int my_strlen(char const *str);
 int my_getnbr(char const *str);
 void my_sort_int_array(int *tab, int size);
-int my_compute_power_rec(int nb, int power);
+int my_compute_power_it(int nb, int p);
 int my_compute_square_root(int nb);
 int my_is_prime(int nb);
 int my_find_prime_sup(int nb);
@@ -42,4 +42,8 @@ int my_getnbr_base(char const *str, char const *base);
 char **my_str_to_word_array(char const *str);
 int my_show_word_array(char * const *tab);
 int my_swap_char(char *a, char *b);
+int is_num(char c);
+int is_alpha(char c);
+int is_upper(char c);
+int is_lower(char c);
 #endif

@@ -4,14 +4,12 @@
 ** File description:
 ** Prints a string
 */
+
 #include "my.h"
+#include <unistd.h>
 
 int my_putstr(char const *str)
 {
-    int i = 0;
-
-    while (str[i] != '\0') {
-        my_putchar(str[i]);
-        i++;
-    }
+    int len = my_strlen(str);
+    write(1, str, len);
 }

@@ -7,19 +7,8 @@
 
 #include "my.h"
 
-static int my_pow(int nbr, int power)
-{
-    int number = 1;
-
-    if (power < 0)
-        return 0;
-    else if (power == 0)
-        return 1;
-    for (int i = 0; i < power; i++) {
-        number *= nbr;
-    }
-    return number;
-}
+int my_compute_power_it(int nb, int p);
+int my_strlen(char const *str);
 
 static int search_in_base(char const *base, char to_find)
 {
@@ -62,7 +51,7 @@ int helper(char carac, char const *base, long int *nbr, int *size_nbr)
         else
             (*size_nbr)--;
     } else {
-        (*nbr) += (index) * my_pow(base_type, (*size_nbr) - 1);
+        (*nbr) += (index) * my_compute_power_it(base_type, (*size_nbr) - 1);
         (*size_nbr)--;
     }
     return 1;

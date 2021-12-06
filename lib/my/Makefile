@@ -5,7 +5,7 @@
 ## Makefile used to create lib
 ##
 
-SRC	=	my_compute_power_rec.c		\
+SRC	=	my_compute_power_it.c		\
 		my_compute_square_root.c	\
 		my_find_prime_sup.c			\
 		my_getnbr_base.c			\

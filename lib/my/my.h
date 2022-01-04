@@ -47,4 +47,8 @@ int is_alpha(char c);
 int is_upper(char c);
 int is_lower(char c);
 int my_printf(char *str, ...);
+int *init_int_array(int size);
+int **init_matrix(int nb_line, int nb_col);
+char **init_str_array(int size);
+char *init_str(int size);
 #endif

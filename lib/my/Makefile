@@ -67,7 +67,6 @@ SRC	=	my_compute_power_it.c			\
 		my_printf/neg.c 				\
 		my_printf/zero.c
 
-
 OBJ	=	$(SRC:.c=.o)
 
 NAME = libmy.a
@@ -88,5 +87,3 @@ fclean:		clean
 re:		fclean all
 
 .PHONY:		all clean fclean re
-
-

@@ -24,6 +24,7 @@ static void compute_percent(char id, va_list ap, char *dest)
 void my_sprintf(char *dest, char *str, ...)
 {
     va_list ap;
+
     va_start(ap, str);
     for (int i = 0; str[i] != '\0'; ++i) {
         if (str[i] == '%' && str[i + 1] != '%')

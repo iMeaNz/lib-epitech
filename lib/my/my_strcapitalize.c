@@ -27,10 +27,9 @@ static int is_num_cap(char c)
 
 char *my_strcapitalize(char *str)
 {
-    int i = 0;
     int in_a_word = 0;
 
-    while (str[i] != '\0') {
+    for (int i = 0; str[i] != 0; ++i) {
         if (is_alpha_cap(str[i]) == -1 && !in_a_word) {
             str[i] -= 32;
             in_a_word = 1;
@@ -39,8 +38,6 @@ char *my_strcapitalize(char *str)
         } else {
             in_a_word = is_num(str[i]);
         }
-        i++;
     }
-
     return str;
 }

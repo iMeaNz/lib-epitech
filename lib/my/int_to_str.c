@@ -22,6 +22,9 @@ char *int_to_str(int nb)
 {
     int size = size_nb(nb);
     char *output = init_str(size);
+
+    if (output == NULL)
+        return NULL;
     my_sput_nbr(nb, output);
     return output;
 }

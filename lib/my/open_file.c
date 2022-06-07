@@ -19,6 +19,7 @@ char *open_file(char *path)
     char *buffer = init_str(1000);
     int error;
     int i = 0;
+
     while ((error = read(fd, &buffer[i++], 1)) == 1) {
         if (error == -1) {
             my_putstderr("There was an error reading the file\n");

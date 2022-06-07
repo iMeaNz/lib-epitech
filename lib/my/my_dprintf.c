@@ -27,6 +27,7 @@ static void compute_percent(char id, va_list ap, int fd)
 void my_dprintf(int fd, char *str, ...)
 {
     va_list ap;
+
     va_start(ap, str);
     for (int i = 0; str[i] != 0; ++i) {
         if (str[i] == '%' && str[i + 1] != '%')

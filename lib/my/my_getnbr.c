@@ -68,6 +68,5 @@ int my_getnbr(char const *str)
         number *= -1;
     if (number < -2147483648 || number > 2147483647)
         return 0;
-
     return (int)number;
 }

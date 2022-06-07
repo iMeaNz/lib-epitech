@@ -37,7 +37,8 @@ static int my_nb_isneg(char const *str)
         return 1;
 }
 
-static int helper(char carac, char const *base, long int *nbr, int *size_nbr)
+static int compute_nbr(char carac, char const *base, long int *nbr,
+                        int *size_nbr)
 {
     int index = search_in_base(base, carac);
     int base_type = my_strlen(base);
@@ -57,11 +58,11 @@ static int helper(char carac, char const *base, long int *nbr, int *size_nbr)
 int my_getnbr_base(char const *str, char const *base)
 {
     long int nbr = 0;
-    int base_type = my_strlen(base), size_nbr = my_strlen(str);
-    for (int i = 0; str[i] != '\0'; i++) {
-        int index = search_in_base(base, str[i]);
-        helper(str[i], base, &nbr, &size_nbr);
-    }
+    int size_nbr = my_strlen(str);
+
+    for (int i = 0; str[i] != '\0'; i++)
+        if (!compute_nbr(str[i], base, &nbr, &size_nbr))
+            return 0;
     nbr *= (my_nb_isneg(str)) ? -1 : 1;
     if (nbr > 2147483647 || nbr < -2147483648)
         return 0;

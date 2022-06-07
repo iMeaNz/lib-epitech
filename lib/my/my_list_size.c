@@ -12,6 +12,7 @@
 int my_list_size(linked_list_t *list)
 {
     int size = 0;
+
     while (list != NULL) {
         size++;
         list = list->next;

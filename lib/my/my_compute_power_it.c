@@ -17,6 +17,5 @@ int my_compute_power_it(int nb, int p)
         result *= nb;
     if (result > 2147483647)
         return 0;
-
     return (int)result;
 }

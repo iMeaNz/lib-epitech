@@ -5,8 +5,6 @@
 ** Header File
 */
 
-#include "linked_list.h"
-
 #ifndef MY_H
     #define MY_H
 
@@ -62,12 +60,5 @@
     char *open_file(char *path);
     void my_putstderr(char *str);
     char *int_to_str(int nb);
-    void append_in_linked_list(linked_list_t **list, char *data);
-    void push_in_linked_list(linked_list_t **list, char *data);
-    void print_linked_list(linked_list_t *list);
-    void delete_node_with_key(linked_list_t **list, char *key);
-    int my_list_size(linked_list_t *list);
-    void my_rev_list(linked_list_t **begin);
-    void my_sort_list(linked_list_t **begin);
 
 #endif

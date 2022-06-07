@@ -5,82 +5,92 @@
 ## Makefile used to create lib
 ##
 
-SRC	=	my_compute_power_it.c			\
-		my_compute_square_root.c		\
-		my_find_prime_sup.c				\
-		my_getnbr_base.c				\
-		my_getnbr.c						\
-		my_is_prime.c					\
-		my_isneg.c						\
-		my_put_nbr.c					\
-		my_dput_nbr.c					\
-		my_sput_nbr.c					\
-		my_putchar.c					\
-		my_putnbr_base.c				\
-		my_putstr.c						\
-		my_revstr.c						\
-		my_show_word_array.c			\
-		my_sort_int_array.c				\
-		my_str_isalpha.c				\
-		my_str_islower.c				\
-		my_str_isnum.c					\
-		my_str_isprintable.c			\
-		my_str_isupper.c				\
-		my_str_to_word_array.c			\
-		my_strcapitalize.c				\
-		my_strcat.c						\
-		my_strcmp.c						\
-		my_strcpy.c						\
-		my_strlen.c						\
-		my_strlowcase.c					\
-		my_strncat.c					\
-		my_strncmp.c					\
-		my_strncpy.c					\
-		my_strstr.c						\
-		my_strupcase.c					\
-		my_swap_char.c					\
-		my_swap.c						\
-		is_alpha.c						\
-		is_lower.c						\
-		is_num.c						\
-		is_upper.c						\
-		init_int_array.c				\
-		init_matrix.c					\
-		init_str_array.c				\
-		init_str.c						\
-		open_file.c						\
-		open_file_with_stat.c			\
-		my_putstderr.c					\
-		my_printf.c						\
-		my_dprintf.c					\
-		my_sprintf.c					\
-		int_to_str.c					\
-		append_in_linked_list.c			\
-		push_in_linked_list.c			\
-		print_linked_list.c				\
-		delete_node_with_key.c			\
-		my_list_size.c					\
-		my_rev_list.c					\
-		my_sort_list.c
+OBJ1 =	my_compute_power_it.o			\
+		my_compute_square_root.o		\
+		my_find_prime_sup.o				\
+		my_getnbr_base.o				\
+		my_getnbr.o						\
+		my_is_prime.o					\
+		my_isneg.o						\
+		my_put_nbr.o					\
+		my_dput_nbr.o					\
+		my_sput_nbr.o					\
+		my_putchar.o					\
+		my_putnbr_base.o				\
+		my_putstr.o						\
+		my_putstderr.o					\
+		my_revstr.o						\
+		my_show_word_array.o			\
+		my_sort_int_array.o				\
+		my_str_isalpha.o				\
+		my_str_islower.o				\
+		my_str_isnum.o					\
+		my_str_isprintable.o			\
+		my_str_isupper.o				\
+		my_str_to_word_array.o			\
+		my_strcapitalize.o				\
+		my_strcat.o						\
+		my_strcmp.o						\
+		my_strcpy.o						\
+		my_strlen.o						\
+		my_strlowcase.o					\
+		my_strncat.o					\
+		my_strncmp.o					\
+		my_strncpy.o					\
+		my_strstr.o						\
+		my_strupcase.o					\
+		my_swap_char.o					\
+		my_swap.o						\
+		is_alpha.o						\
+		is_lower.o						\
+		is_num.o						\
+		is_upper.o						\
+		init_int_array.o				\
+		init_matrix.o					\
+		init_str_array.o				\
+		init_str.o						\
+		open_file.o						\
+		open_file_with_stat.o			\
+		my_printf.o						\
+		my_dprintf.o					\
+		my_sprintf.o					\
+		int_to_str.o 					\
+		delete_node_with_key.o 			\
+		my_list_size.o 					\
+		my_rev_list.o 					\
+		my_sort_list.o 					\
+		print_linked_list.o				\
+		push_in_linked_list.o			\
+		append_in_linked_list.o 		\
+		my_strtok.o 					\
+		my_strtok_alpha.o
 
-OBJ	=	$(SRC:.c=.o)
+OBJ_PATH = obj/
+
+RM := rm
+
+OBJ := $(patsubst %, $(OBJ_PATH)%, $(OBJ1))
 
 NAME = libmy.a
 
 all:
 	@$(MAKE) -s $(NAME)
 
+$(OBJ_PATH)%.o: $(SRC_PATH)%.c
+				@mkdir -p $(dir $@)
+				@echo [CC] $<
+				@$(CC) $(C_FLAGS) -o $@ -c $< $(INC_PATH)
+
 $(NAME):	$(OBJ)
-		ar rc $(NAME) $(OBJ)
-		rm -rf $(OBJ)
-		cp my.h ../../include
-		cp linked_list.h ../../include
+			@echo [INFO] Creating library [$(NAME)]
+			ar -rc $(NAME) $(OBJ_PATH)*
 
 clean:
-		rm -rf $(OBJ)
+		@$(RM) -rfv $(OBJ_PATH)*
 
 fclean:		clean
-		rm -rf $(NAME)
+		@$(RM) -rfv $(NAME)
+		@$(RM) -rfv $(OBJ_PATH)
 
 re:		fclean all
 

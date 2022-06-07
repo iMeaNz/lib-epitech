@@ -9,12 +9,9 @@
 
 int my_str_isupper(char const *str)
 {
-    int i = 0;
-
-    while (str[i] != '\0') {
+    for (int i = 0; str[i] != 0; ++i) {
         if (is_upper(str[i]) == 0)
             return 0;
-        i++;
     }
     return 1;
 }

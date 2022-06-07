@@ -13,6 +13,7 @@ void delete_node_with_key(linked_list_t **list, char *key)
 {
     linked_list_t *tmp = (*list);
     linked_list_t *prev = (*list);
+
     if (tmp != NULL && !my_strcmp(tmp->data, key)) {
         (*list) = tmp->next;
         free(tmp);

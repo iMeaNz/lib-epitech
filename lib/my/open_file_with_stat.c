@@ -17,13 +17,17 @@ char *open_file_with_stat(char *path)
 {
     struct stat st;
     int fd = open(path, O_RDONLY | 0, 0);
-    if (stat(path, &st) == -1) {
+    int size = 0;
+    char *buffer;
+    int error = 0;
+
+    if (fd == -1 || stat(path, &st) == -1) {
         my_putstderr("There was an error in the file\n");
         return NULL;
     }
-    int size = st.st_size;
-    char *buffer = init_str(size);
-    int error = read(fd, buffer, size);
+    size = st.st_size;
+    buffer = init_str(size);
+    error = read(fd, buffer, size);
     if (error == -1) {
         my_putstderr("There was an error reading the file\n");
         return NULL;

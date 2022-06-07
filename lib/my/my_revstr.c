@@ -11,9 +11,7 @@ char *my_revstr(char *str)
 {
     int length = my_strlen(str);
 
-    for (int i = 0; i < length / 2; i++) {
+    for (int i = 0; i < length / 2; i++)
         my_swap_char(&str[i], &str[length - i - 1]);
-    }
-
     return str;
 }
